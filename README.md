@@ -3,6 +3,6 @@
 
 flask+ gunicorn 搭建高性能服务框架
 
-集成docker
+集成docker容器化
 
 git remote add origin git@github.com:tomliu112/flask-docker-hp.git
