@@ -5,6 +5,6 @@ flask+ gunicorn 搭建高性能服务框架
 
 集成docker容器化
 
-运行docker使用如下命令 将日志输出到外部文件夹/Users/liutom/PycharmProjects/tt/mygithub/logs中
+运行docker使用如下命令 将日志输出到外部文件夹/yourpath/logs中
 
-docker run  -p 5001:15000 -v  /Users/liutom/PycharmProjects/tt/mygithub/logs:/microservice/logs tomliu/flaskhp
+docker run  -p 5001:15000 -v  /yourpath/logs:/microservice/logs yourcontainer
