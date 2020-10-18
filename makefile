@@ -28,4 +28,5 @@ ps -ef | grep "gunicorn" | grep -v grep | awk '{print $2}' | xargs kill
 nohup gunicorn -c gun.py services.user:app --log-config log.conf > /dev/null 2>&1 &
 nohup gunicorn -c gun.py app:app --log-config log.conf > /dev/null 2>&1 &
 
+docker build . -t tomliu/flaskhp
 docker run  -p 5001:15000 -v  /Users/liutom/PycharmProjects/tt/mygithub/logs:/microservice/logs tomliu/flaskhp
