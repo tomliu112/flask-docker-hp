@@ -3,7 +3,7 @@
 
 日志输出配置在log.conf
 
-flask + gunicorn 搭建高性能服务框架
+flask + gunicorn搭建高性能服务框架
 
 集成docker容器化
 
