@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomliu-flaskhp-service
+spec:
+  selector:
+    app: tomliu-flaskhp
+  ports:
+  - protocol: "TCP"
+    port: 5000
+    targetPort: 5000
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomliu-flaskhp
+spec:
+  selector:
+    matchLabels:
+      app: tomliu-flaskhp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tomliu-flaskhp
+    spec:
+      containers:
+      - name: tomliu-flaskhp
+        image: tomliu-flaskhp:latest
+        imagePullPolicy: Never
+        volumeMounts:
+        - mountPath: /microservice
+          name: test-volume
+        ports:
+        - containerPort: 5000
+      volumes:
+       - name: test-volume
+         hostPath:
+           path: /Users/liutom/PycharmProjects/tt/mygithub
+           type: Directory

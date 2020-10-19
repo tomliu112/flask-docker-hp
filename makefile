@@ -29,4 +29,8 @@ nohup gunicorn -c gun.py services.user:app --log-config log.conf > /dev/null 2>&
 nohup gunicorn -c gun.py app:app --log-config log.conf > /dev/null 2>&1 &
 
 docker build . -t tomliu/flaskhp
-docker run  -p 5001:15000 -v  /Users/liutom/PycharmProjects/tt/mygithub/logs:/microservice/logs tomliu/flaskhp
+docker run  -p 5000:5000 -v  /Users/liutom/PycharmProjects/tt/mygithub/logs:/microservice/logs tomliu/flaskhp
+kubectl apply -f test.yaml
+
+kubectl delete service tomliu-flaskhp-service
+kubectl delete deployment tomliu-flaskhp
