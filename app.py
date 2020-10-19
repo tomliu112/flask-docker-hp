@@ -5,6 +5,7 @@ import json
 import requests
 import os
 import json
+import logging
 from flask import make_response
 
 
@@ -38,8 +39,7 @@ def hello():
 
 @app.route("/users", methods=['GET'])
 def users_list():
-
-
+    logging.info("tom ant coming");
     return nice_json(users)
 @app.route("/add", methods=['GET'])
 def add():
@@ -57,6 +57,7 @@ def minus():
 def user_record(username):
     if username not in users:
         raise NotFound
+    logging.info("tom ant coming");
 
     return nice_json(users[username])
 
